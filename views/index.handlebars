@@ -2,25 +2,31 @@
 
 <h1>Eat Da Burger!</h1>
 
-<h2>Burgers to eat!</h2>
+<div class="columns">
+  <div class="column">
+   <h2>Burgers to eat!</h2>
 
-<ul>
-  {{#each burgers}}
-    {{#unless devoured}}
-      {{> cats/cat-block sleep=true}}//need to change this line
-    {{/unless}}
-  {{/each}}
-</ul>
 
-<h2>Burgers eaten!</h2>
+    <ul>
+      {{#each burgers}}
+        {{#unless devoured}}
+          {{> burgers/burger_block devoured=true}}//need to change this line
+        {{/unless}}
+      {{/each}}
+    </ul>
+  </div>
+  <div class="column">
+   <h2>Burgers eaten!</h2>
 
-<ul>
-  {{#each burgers}}
-    {{#if devoured}}
-      {{> cats/cat-block sleep=false}}//need to change this line
-    {{/if}}
-  {{/each}}
-</ul>
+      <ul>
+        {{#each burgers}}
+          {{#if devoured}}
+            {{> burgers/burger_block devoured=false}}//need to change this line
+          {{/if}}
+        {{/each}}
+      </ul>
+  </div>
+</div>
 
 <h2>Add a Burger</h2>
 <form class="create-form">

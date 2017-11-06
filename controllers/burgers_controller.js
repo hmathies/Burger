@@ -16,13 +16,13 @@ router.get("/", function(req, res) {
   });
 });
 
-router.post("/api/cats", function(req, res) {
+router.post("/api/burgers", function(req, res) {
   burger.create([
-    "??", "??"
+    "name", "devoured"
   ], [
-    req.body.??, req.body.??
+    req.body.name, req.body.devoured
   ], function(result) {
-    // Send back the ID of the new quote
+    // Send back the ID of the new burger
     res.json({ id: result.insertId });
   });
 });
@@ -33,7 +33,7 @@ router.put("/api/burgers/:id", function(req, res) {
   console.log("condition", condition);
 
   burger.update({
-    ??: req.body.??
+    name: req.body.devoured
   }, condition, function(result) {
     if (result.changedRows == 0) {
       // If no rows were changed, then the ID must not exist, so 404
