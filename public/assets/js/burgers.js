@@ -1,57 +1,58 @@
 // / Make sure we wait to attach our handlers until the DOM is fully loaded.
 $(function() {
-  $(".change-sleep").on("click", function(event) {
+  $(".change-eat").on("click", function(event) {
+    console.log("change-eat click detected!");
     var id = $(this).data("id");
-    var newSleep = $(this).data("newsleep");
+    var newEat = $(this).data("neweat");
 
-    var newSleepState = {
-      sleepy: newSleep
+    var newEatState = {
+      devoured: newEat
     };
 
     // Send the PUT request.
     $.ajax("/api/burgers/" + id, {
       type: "PUT",
-      data: newSleepState
+      data: newEatState
     }).then(
       function() {
-        console.log("changed sleep to", newSleep);
+        console.log("changed eat to", newEat);
         // Reload the page to get the updated list
         location.reload();
       }
     );
   });
 
-  $(".create-form").on("submit", function(event) {
+  $(".create-burger").on("submit", function(event) {
     // Make sure to preventDefault on a submit event.
     event.preventDefault();
-
-    var newCat = {
-      name: $("#ca").val().trim(),
-      sleepy: $("[name=sleepy]:checked").val().trim()
+    console.log("create-burger submit detected!");
+    var newBurger = {
+      burger_name: $("#bu").val().trim(),
+      devoured: $("[burger_name=devoured]:checked").val().trim()
     };
 
     // Send the POST request.
     $.ajax("/api/burgers", {
       type: "POST",
-      data: newCat
+      data: newBurger
     }).then(
       function() {
-        console.log("created new cat");
+        console.log("Yay! created new burger");
         // Reload the page to get the updated list
         location.reload();
       }
     );
   });
 
-  $(".delete-cat").on("click", function(event) {
+  $(".delete-eat").on("click", function(event) {
     var id = $(this).data("id");
-
+    console.log("delete-eat click detected!");
     // Send the DELETE request.
     $.ajax("/api/burgers/" + id, {
       type: "DELETE",
     }).then(
       function() {
-        console.log("deleted cat", id);
+        console.log("deleted burger", id);
         // Reload the page to get the updated list
         location.reload();
       }

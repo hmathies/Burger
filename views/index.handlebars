@@ -9,21 +9,21 @@
 </div>
 
 
-
-
-<div class="container is-success"> 
+<div class="container"> 
   <div class="columns">
     <div class="column">
-     <h2>Burgers to eat!</h2>
+     <h2">Burgers to eat!</h2>
 
       <ul>
         {{#each burgers}}
           {{#unless devoured}}
-            {{> burgers/burger_block devoured=true}}
+            {{> burgers/burger_block devoured=false}}
           {{/unless}}
         {{/each}}
       </ul>
     </div>
+
+
     <div class="column">
      <h2>Burgers eaten!</h2>
 
@@ -36,24 +36,21 @@
         </ul>
     </div>
   </div>
+  
+     <div class="field has addons">
+      <div class="control">
+         <input class="input" type="text" id="bu" name="burger_name" placeholder="Double Cheeseburger">
+      </div>
+      <div class="control">
+          <button type="submit" id="create-burger" class="button is-danger">
+        Add Burger
+        </button>
+      </div>
   </div>
 
-  <div class="container">
-    <div class="field is-centered">
-      <h2>Add a Burger</h2>
-          <label class="label">Burger Name:</label>
-          <div class="control">
-            <input type="text" id="bu" name="name">
-          </div>
 
-          <div class="control">
-            <input type="radio" name="devoured" value="1" checked> Devoured!<br>
-            <input type="radio" name="devoured" value="0"> Ready to eat!
-          </div>
-    <!-- the button that will submit the user input into the database.  -->
-      <button type="submit">Add Burger</button>
-    </div>
-  </div>
-</div>
+
+
+
 
 
