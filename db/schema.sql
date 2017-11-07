@@ -1,4 +1,4 @@
-    DROP DATABASE burgers_db;
+  
      CREATE DATABASE burgers_db;
      USE burgers_db;
 
@@ -9,3 +9,4 @@
        date TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
        PRIMARY KEY (id)
      );
+
