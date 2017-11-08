@@ -5,8 +5,38 @@ img {
 
 }
 
-h2 {
-	
-	font-size: 30px;
+/*I think i have to add the css for the index.handlebars directly in the file because I can't get it to work here
+		*//*h2{
+			color: #8FC33A;
+			font-size: 30px;
+			border: #8FC33A;
+			font-style: bold;
+
+
+		}*/
+
+body{
+	background-color: #E9C904;
 }
 
+.hero {
+	background: #FE65B7;
+	padding: 20px;	
+	
+}
+
+#create-burger {
+	background: #FE65B7;
+}
+
+footer {
+	padding-bottom: 50px;
+	color: #62EDD6;
+	padding-left: 10px;
+	font-weight: 600px;
+
+}
+h1.title{
+	font-size: 40px;
+	font-family: 'Crete Round', serif; 
+}
