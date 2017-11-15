@@ -9,7 +9,7 @@
 </div>
 
 
-<div class="container content has-text-centered"> 
+<div class="container content has-text-centered">
   <div class="columns">
     <div class="column">
      <h2 class="eatMenu">Burgers to eat!</h2>
@@ -17,7 +17,11 @@
       <ul>
         {{#each burgers}}
           {{#unless this.devoured}}
-            {{> burgers/burger_block devoured=false}}
+              <div>
+              <form action="/burgers/{{this.id}}" method="PUT">
+                <button type="submit" class='burgerAvailable'> {{this.burger_name}}</button>
+              </form>
+            </div>
           {{/unless}}
         {{/each}}
       </ul>
@@ -31,24 +35,24 @@
         <ul>
           {{#each burgers}}
             {{#if this.devoured}}
-              {{> burgers/burger_block devoured=false}}
+              <div class='burgerEaten'>
+              <div>
+                {{this.burger_name}}
+              </div>
+            </div>
             {{/if}}
           {{/each}}
         </ul>
     </div>
   </div>
-  
+   <form action="/burgers" method="POST">
      <div class="field has-addons columns">
-      <div class="control column is-half is-offset-one-quarter">
+      <div class="control"  class="column is-half is-offset-one-quarter">
          <input class="input" type="text" id="bu" name="burger_name" placeholder="Delicious Yummy Burger">
       </div>
       <div class="control">
           <a type="submit" id="create-burger" class="button">Add Burger
         </a>
       </div>
+    </form>
   </div>
-  
-
-
-
-

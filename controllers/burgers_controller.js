@@ -17,14 +17,14 @@ router.get("/", function(req, res) {
 });
 
 router.post("/burgers", function(req, res) {
-  console.log(res.body);
+
   burger.insertOne([
     "burger_name"
   ], [
     req.body.burger_name
 
-  ], function(result) {
-    
+  ], function(res) {
+
     res.redirect('/');
   });
 });
