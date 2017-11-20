@@ -18,10 +18,8 @@
         {{#each burgers}}
           {{#unless this.devoured}}
               <div>
-              <form action="/burgers/{{this.id}}" method="PUT">
-                <button type="submit" class='burgerAvailable'> {{this.burger_name}}</button>
-              </form>
-            </div>
+              <a href="#" class="burgers2eat" data-id="{{this.id}}">{{this.burger_name}}</a>
+             </div>
           {{/unless}}
         {{/each}}
       </ul>
@@ -51,8 +49,7 @@
          <input class="input" type="text" id="bu" name="burger_name" placeholder="Delicious Yummy Burger">
       </div>
       <div class="control">
-          <a type="submit" id="create-burger" class="button">Add Burger
-        </a>
+          <input type="submit" id="create-burger" class="button" value="Add Burger">
       </div>
     </form>
   </div>
