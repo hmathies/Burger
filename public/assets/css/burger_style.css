@@ -5,15 +5,6 @@ img {
 
 }
 
-/*I think i have to add the css for the index.handlebars directly in the file because I can't get it to work here
-		*//*h2{
-			color: #8FC33A;
-			font-size: 30px;
-			border: #8FC33A;
-			font-style: bold;
-
-
-		}*/
 
 h2.eatMenu {
 	font-size: 30px;
@@ -36,10 +27,6 @@ body{
 }
 
 footer {
-	/*padding-bottom: 50px;*/
-	/*color: #62EDD6;
-	background-color: #8FC33A;*/
-	/*padding-left: 10px;*/
 	font-weight: 600px;
 }
 
