@@ -1,5 +1,6 @@
 // Connecting Node to MySQL
-var mysql = require("mysql");
+var mysql = require("mysql2");
+
 
 var connection;
 
@@ -30,12 +31,3 @@ connection.connect(function(err) {
 
 module.exports = connection;
 //
-// mysql://ivrbdyi8mjlu694x:ikpen0oqwwbetds3@nj5rh9gto1v5n05t.cbetxkdyhwsb.us-east-1.rds.amazonaws.com:3306/p00btgf1s5z2p6db
-// JAWSDB_URL='mysql://ivrbdyi8mjlu694x:ikpen0oqwwbetds3@nj5rh9gto1v5n05t.cbetxkdyhwsb.us-east-1.rds.amazonaws.com:3306/p00btgf1s5z2p6db'
-// var connection = mysql.createConnection({
-//
-//   host: "nj5rh9gto1v5n05t.cbetxkdyhwsb.us-east-1.rds.amazonaws.com:3306",
-//   user: "ivrbdyi8mjlu694x",
-//   password: "ikpen0oqwwbetds3",
-//   database: "p00btgf1s5z2p6db"
-// });
