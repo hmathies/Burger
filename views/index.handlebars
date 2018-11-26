@@ -1,5 +1,5 @@
 <!-- the template that Handlebars renders onto. -->
-
+<button onclick="topFunction()" id="myBtn" title="Go to top">Top</button>
 <div class="hero">
   <div class="container has-text-centered">
     <h1 class="title">
@@ -56,9 +56,30 @@
       </ul>
     </div>
   </div>
+
 </div>
+
 
 <footer class="has-text-centered">
   Built and Designed by Heather Mathies
 </footer>
 </div>
+<script>
+  window.onscroll = function() {
+    scrollFunction()
+  };
+
+  function scrollFunction() {
+    if (document.body.scrollTop > 50 || document.documentElement.scrollTop > 50) {
+      document.getElementById("myBtn").style.display = "block";
+    } else {
+      document.getElementById("myBtn").style.display = "none";
+    }
+  }
+
+  // When the user clicks on the button, scroll to the top of the document
+  function topFunction() {
+    document.body.scrollTop = 0;
+    document.documentElement.scrollTop = 0;
+  }
+</script>
