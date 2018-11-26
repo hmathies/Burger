@@ -3,53 +3,62 @@
 <div class="hero">
   <div class="container has-text-centered">
     <h1 class="title">
-        Eat Da Burger
+      Eat Da Burger
     </h1>
   </div>
 </div>
 
 
 <div class="container content has-text-centered">
+
   <div class="columns">
     <div class="column">
-     <h2 class="eatMenu">Burgers to eat!</h2>
+      <h2 class="eatMenu">Burgers to eat!</h2>
 
       <ul>
         {{#each burgers}}
           {{#unless this.devoured}}
-              <div>
+            <div>
               <a href="#" class="burgers2eat" data-id="{{this.id}}">{{this.burger_name}}</a>
-             </div>
+            </div>
           {{/unless}}
         {{/each}}
       </ul>
     </div>
 
+    <div class="column" id="form-div">
+      <form action="/burgers" method="POST">
+        <div class="field has-addons">
+          <div class="control">
+            <input class="input" type="text" id="burger-input" name="burger_name" placeholder="Yummy Burger">
+          </div>
+          <div class="control">
+            <input type="submit" id="create-burger" class="button" value="Add Burger">
+          </div>
+        </div>
+      </form>
+    </div>
 
 
     <div class="column">
-     <h2 class="eatMenu">Burgers eaten!</h2>
+      <h2 class="eatMenu">Burgers eaten!</h2>
 
-        <ul>
-          {{#each burgers}}
-            {{#if this.devoured}}
-              <div class='burgerEaten'>
+      <ul>
+        {{#each burgers}}
+          {{#if this.devoured}}
+            <div class='burgerEaten'>
               <div>
                 {{this.burger_name}}
               </div>
             </div>
-            {{/if}}
-          {{/each}}
-        </ul>
+          {{/if}}
+        {{/each}}
+      </ul>
     </div>
   </div>
-   <form action="/burgers" method="POST">
-     <div class="field has-addons columns">
-      <div class="control"  class="column is-half is-offset-one-quarter">
-         <input class="input" type="text" id="bu" name="burger_name" placeholder="Delicious Yummy Burger">
-      </div>
-      <div class="control">
-          <input type="submit" id="create-burger" class="button" value="Add Burger">
-      </div>
-    </form>
-  </div>
+</div>
+
+<footer class="has-text-centered">
+  Built and Designed by Heather Mathies
+</footer>
+</div>

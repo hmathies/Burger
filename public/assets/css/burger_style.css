@@ -20,13 +20,21 @@ body{
 	padding: 20px;
 
 }
-
+#form-div {
+	padding-top: 30px;
+	padding-left: 30px;
+}
+#burger-input {
+	padding-left: 50px;
+}
 #create-burger {
 	background: #FE65B7;
 }
 
 footer {
 	font-weight: 600px;
+	background: #FE65B7;
+
 }
 
 h1.title{
